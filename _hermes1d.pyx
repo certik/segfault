@@ -5,6 +5,8 @@ def test():
 
     size = 10
     arrsource = <double *>malloc(sizeof(double) * size)
-    newarr = PyArray_SimpleNewFromData(1, &size, 12, <void *>arrsource)
+    print "I am still alive"
+    newarr = PyArray_SimpleNewFromData(1, &size, NPY_DOUBLE, <void *>arrsource)
+    print "I am dead."
 
     return newarr
