@@ -1,30 +1,3 @@
-cdef class Vertex:
-    cdef c_Vertex *thisptr
-
-    @property
-    def x(self):
-        return self.thisptr.x
-
-    def __str__(self):
-        return "Vertex(%r)" % (self.x)
-
-cdef class Element:
-    cdef c_Element *thisptr
-
-    @property
-    def p(self):
-        return self.thisptr.p
-
-cdef class Mesh:
-    cdef c_Mesh *thisptr
-
-    def __cinit__(self, int eq_num):
-        self.thisptr = new_Mesh(eq_num)
-
-    def __dealloc__(self):
-        delete(self.thisptr)
-
-
 import sys
 import traceback
 
