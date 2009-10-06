@@ -103,4 +103,4 @@ cdef api object run_cmd(char *text, object namespace):
         etype, value, tb = sys.exc_info()
         s = "".join(traceback.format_exception(etype, value, tb))
         s = "Exception raised in the Python code:\n" + s
-        throw_exception(s)
+        #throw_exception(s)
