@@ -54,6 +54,8 @@ cdef extern from "arrayobject.h":
     object PyArray_SimpleNewFromData(int nd, npy_intp* dims, int typenum,
             void* data)
 
+    void _import_array()
+
 cdef extern from "Python.h":
     ctypedef void PyObject
     void Py_INCREF(PyObject *x)

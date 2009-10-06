@@ -2,6 +2,7 @@ def test():
     cdef npy_intp size
     cdef ndarray newarr
     cdef double *arrsource
+    _import_array()
 
     size = 10
     arrsource = <double *>malloc(sizeof(double) * size)
