@@ -104,3 +104,15 @@ cdef api object run_cmd(char *text, object namespace):
         s = "".join(traceback.format_exception(etype, value, tb))
         s = "Exception raised in the Python code:\n" + s
         #throw_exception(s)
+
+
+def test():
+    cdef npy_intp size
+    cdef ndarray newarr
+    cdef double *arrsource
+
+    size = 10
+    arrsource = <double *>malloc(sizeof(double) * size)
+    newarr = PyArray_SimpleNewFromData(1, &size, 12, <void *>arrsource)
+
+    return newarr
